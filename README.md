@@ -20,7 +20,7 @@ Instructions to run the cache hierarchy simulator:
    $  make
 4. Run the executable with the 8 required user inputs, as specified by the project spec:
      * In order these inputs are ./executable blocksize L1cachesize L1set-associativity L2cachesize L2set-associativity ReplacementPolicy InclusionProperty MemoryAccessTraceFilename
-   $  ./cache_sim 64 32768 1 0 0 0 0 GCC.t
+   $  ./cache_sim 64 32768 1 0 0 0 0 GCC_short.t
 
 Current simulator output to terminal as of Sept 20 2023:
 ![](https://github.com/taylortempleton/CacheHierarchySimulator/blob/main/Docs/TerminalOutput_Sept20_2023.png)

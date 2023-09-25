@@ -1,24 +1,10 @@
 #pragma once
 #include <iostream>
+#include <vector>
 
 class cacheClass{
     public:
-        
-        typedef struct cacheStruct{
-            unsigned long long cacheTagField;
-            int validBit;
-            int dirtyBit;
-            int policycounter;
-            }cacheStruct;
 
-        void readCache(cacheStruct readCacheModify[][32]);
-        void writeCache(cacheStruct writeCacheModify[][32]);
-        int cacheRepPolicy(cacheStruct cacheRepPolicyModify[][32]);
-        int LRU(cacheStruct cacheLRUModify[][32]);
-
-        // *******   Dont want this hard coded? Should it be part of construction?
-        cacheStruct classStruct[1024][32];
-        
         // Cache Design
         int cacheSize;
         int setAssociativity;
@@ -36,13 +22,13 @@ class cacheClass{
 
         // Metrics
         int readHits=0;
-        int totalReads=0;
         int readMisses=0;
+        int totalReads=0;
         int writeHits=0;
-        int totalWrites=0; 
         int writeMisses=0;
+        int totalWrites=0; 
         int writeBacks=0;
-        int policyCounter=0;
+        int memTransactionCount=0;
 
         int l=1;
         float missRate;
@@ -50,6 +36,33 @@ class cacheClass{
         unsigned long long cpuAddress,cpuAddrTagField;
         unsigned long cpuAddrIndex;
         unsigned long cpuAddrOffset;
+
+        typedef struct cacheStruct{
+            unsigned long long cacheTagField;
+            int validBit = 0;
+            int dirtyBit = 0;
+            int leastRecentUsedCounterBit = 0;
+            }cacheStruct;
+
+        // Define an array of blocks to be sized as needed
+        typedef std::vector < std::vector < cacheStruct >> blockStruct;
+        
+        // by ref
+        void readCache(blockStruct& readCacheModify);
+        void writeCache(blockStruct& writeCacheModify);
+        int cacheRepPolicy(blockStruct& cacheRepPolicyModify);
+        int LRU(blockStruct& cacheLRUModify);
+        /*
+       // by val - original
+        void readCache(blockStruct readCacheModify);
+        void writeCache(blockStruct writeCacheModify);
+        int cacheRepPolicy(blockStruct cacheRepPolicyModify);
+        int LRU(blockStruct cacheLRUModify);
+        */
+        blockStruct blockStructArray;
+
+        //std::vector < std::vector < std::vector < cacheStruct >>> struct3D;
+
 
     private:
         // ?
