@@ -58,5 +58,3 @@ $   ./main 12 32 128 2 128 2 Test_12bit.t
 Current simulator output to terminal as of Oct 18 2023:
 ![](https://github.com/taylortempleton/CacheHierarchySimulator/blob/main/Docs/TerminalOutput_Oct18_2023.png)
 
-Status Notes
-*** 9/14/2023: Executable will not run with MCT.t 
