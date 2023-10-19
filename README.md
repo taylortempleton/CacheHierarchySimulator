@@ -1,6 +1,8 @@
-*** Work in progress as of 10/2/2023. ECD 11/1/2023 ***
+*** Work in progress as of 10/19/2023. ECD 11/1/2023 ***
 
 # Cache Hierarchy Simulator
+
+## Hello!
 
 I am a Raleigh, NC based engineer with semiconductor fabrication experience reskilling for a technical role within a computer-hardware manufacturing or design company.  
 
@@ -17,6 +19,10 @@ Goal: Build understanding of basic cache hierarchy principles (replacement polic
 Output: Create simulator to estimate performance of various cache configurations, and compare against "6 basic cache optimizations" as specified by Hennessy and Patterson in "Computer Architecture : A Quantitative Approach".
 
 Tools: C/C++
+
+## Wait, what does this thing do?
+
+(graphic)
 
 ## 6 Basic Optimizations
 
