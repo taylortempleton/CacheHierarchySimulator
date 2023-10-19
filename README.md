@@ -22,11 +22,13 @@ Tools: C/C++
 
 ## Wait, what does this thing do?
 
-This simulator allows one pick parameters for an L1/L2 cache, and observe missrate and traffic to main memory.  The goal is to observe how selecting different cache parameters affects memory access frequency and consequently, CPU performance (more misses or more main memory accesses = more time waiting on slower memory = fewer instructions per second processed by the CPU).
+CPUs are fast.  They write or read millions of instructions per second.  Memory, which stores these instructions, needs to be fast to keep up with the CPU.  
 
-CPUs are fast.  They write or read millions of instructions per second.  Memory which stores these instructions needs to be fast to keep up.  But, fast memory near the CPU is expensive.  So, architects use a "hierarchy": a small amount of fast, expensive memory near the CPU, a larger amount of slower memory farther away, and a huge amount of cheap memory furthest away.  Data is passed between these "levels", to keep what the CPU needs next as close to the CPU as possible, and to keep what is not needed farther away.
+But, fast memory near the CPU is expensive.  So architects use a "hierarchy", different types of memory linked together.  A small amount of fast, expensive memory is located near the CPU ("L1"), a larger amount of slower memory is located farther away ("L2"), and a huge amount of cheap, slow memory furthest away ("Main memory").  Data is passed between these "levels", to keep only what the CPU needs next close by, and what is needed later farther away.
 
-The parameters of each memory level determine how well this hierarhy system works.  For example, if the closest memory (L1 cache) only had room for one instruction, it would always be full and the CPU would always be accessing the lower, slower caches.  By changing L1 and L2 cache parameters, one can see how often the caches "miss" (don't have the needed data) and must access a slower memory to retrieve it (CPU must wait on the slower memory).
+How well this hierarhy system works depends on each levels' parameters.  For example, imagine the closest memory (L1 cache) only had room for just one instruction: it would always be full, and the CPU would always be accessing the lower, slower caches.  The L1 would be useless.  
+
+This simulator is a simple learning tool to explore how L1/L2 cache parameters impact performance.  One can pick parameters for an L1/L2 cache, and observe missrate and traffic to main memory (more misses or more main memory accesses = more time waiting on slower memory = fewer instructions processed by the CPU per second).
 
 ## 6 Basic Optimizations
 
