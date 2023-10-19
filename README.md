@@ -4,7 +4,7 @@
 
 ## Hello!
 
-I am a Raleigh, NC based engineer with semiconductor fabrication experience reskilling for a technical role within a computer-hardware manufacturing or design company.  
+I am a Raleigh, NC based engineer with RF semiconductor fabrication experience reskilling for a role within a computer-hardware manufacturing or design focused organization.
 
 Below is a small self-assigned project in support of that effort. All input is much appreciated.  Thank you!
 
