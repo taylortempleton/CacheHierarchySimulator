@@ -34,16 +34,17 @@ Taken from Hennessy and Patterson in "Computer Architecture : A Quantitative App
 
 1. cd to appropriate path
    $ cd (filepath)
-3. Run 'make' to build the executable and its dependencies
-   $  make
+3. compile
+   $   g++ main.cpp Cache.cpp System.cpp -o main
 4. Run the executable with the 8 required user inputs, as specified by the project spec:
      * In order these inputs are:
      
-     *   ./executable blocksize L1cachesize L1set-associativity L2cachesize L2set-associativity ReplacementPolicy InclusionProperty MemoryAccessTraceFilename
-   $  ./cache_sim 64 32768 1 0 0 0 0 GCC_short.t
+     * ./executablename 1(addressLength) 2(cacheBlockSize) 3(L1 cachesize) 4(L1 setassoc) 5(L2 cachesize) 6(L2 cachesize) 7(tracefile name)
 
-Current simulator output to terminal as of Sept 20 2023:
-![](https://github.com/taylortempleton/CacheHierarchySimulator/blob/main/Docs/TerminalOutput_Sept20_2023.png)
+$   ./main 12 32 128 2 128 2 Test_12bit.t
+
+Current simulator output to terminal as of Oct 18 2023:
+![](https://github.com/taylortempleton/CacheHierarchySimulator/blob/main/Docs/TerminalOutput_Oct18_2023.png)
 
 Status Notes
 *** 9/14/2023: Executable will not run with MCT.t 
