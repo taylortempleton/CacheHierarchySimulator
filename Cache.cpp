@@ -43,7 +43,6 @@
                     blockStructArray_[decodedIndex][j].lruField=addressCounter;
                     blockStructArray_[decodedIndex][j].validBit=1;
                     blockStructArray_[decodedIndex][j].dirtyBit=1;
-                    //break;
                     return 1; // Hit
                 }
                 
@@ -88,9 +87,9 @@
                     readHits++;
                     readHit=true;
                     blockStructArray_[decodedIndex][j].lruField = addressCounter;
-                    break;
-                    }
                     return 1; // Hit
+                    }
+
             }
 
             // If no read hit, find replacement victim
